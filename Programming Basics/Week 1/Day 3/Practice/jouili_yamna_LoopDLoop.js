@@ -15,12 +15,3 @@ for(var i=0;i<7;i++){
     }
 }
 
-// ninja
-
-var hour=60
-for(var i=0;i<7;i++){
-    if(i/hour>=5.5 && i%2==0 && i!=6){
-        console.log("piece of candy")
-    }
-    
-}
