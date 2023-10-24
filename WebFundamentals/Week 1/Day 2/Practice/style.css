@@ -1,0 +1,22 @@
+h1{
+background-color: rgb(8, 1, 1);
+font-family: sans-serif;
+color:white;
+font-style: normal;
+text-align: right 2px;
+}
+.aqua{
+    color: aqua;
+}
+h2{
+background-color: blueviolet;
+color: white;
+text-align: center;
+font-style: italic;
+}
+h3{
+
+    background-color:rgb(159,197,248) ;
+    text-align: right;
+    text-decoration: underline;
+}
