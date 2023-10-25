@@ -1,0 +1,48 @@
+.countainer{
+    background: black;
+    width: 600px;
+    height: 180px;
+
+}
+.box1{
+    background-color: white;
+    width: 150px;
+    height: 60px;
+    
+}
+.box2{
+
+    background-color: red;
+    height: 120px;
+    width: 450px;
+    margin-left: 15px;
+    
+  
+}
+.box{
+    display: flex;
+}
+.box3{
+    background-color: blue;
+    width: 150px;
+    height: 60px;
+  
+}
+.box4{
+    background-color: white;
+    height: 60px;
+    width: 430px;
+}
+.box5{
+   background-color: white;
+   height: 30px;
+   width: 50px;
+   
+
+   }
+   .box6{
+    background-color: yellow;
+    height: 30px;
+    width:50px ;
+    
+   }
