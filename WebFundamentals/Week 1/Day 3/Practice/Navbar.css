@@ -1,0 +1,41 @@
+*{
+    margin: auto;
+    color: white;
+    text-decoration: none;
+}
+
+.nav{
+    display: flex;
+    background-color:black;
+    height: 40px;
+    width: 70%;
+    justify-items: center;
+}
+.nav-title{
+font-weight: bold;
+display: flex;
+margin-left: 10px;
+
+flex: 1;
+}
+.nav-links{
+
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    flex: 2;
+    
+}
+.btn{
+background-color: aqua;
+color: white;
+box-shadow: 10px 5px 5px black;
+
+}
+li{
+    list-style: none;
+
+}
+.active{
+    font-weight: bold;
+}
