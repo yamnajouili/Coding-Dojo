@@ -45,9 +45,10 @@ dojo = {
 }
 
 
-def PrintInfo(dojo):
-   for key in dojo.keys():
-     print(key)
+def PrintInfo(dic):
+   for val in dic.values():
+     for  i in range(0,len(dic['value'])):
+      print(len(dic['value']) ,dic['key'])
 
 
 PrintInfo(dojo)

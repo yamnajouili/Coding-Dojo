@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML TABLE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container col-6">
+    <table class="table mt-5 table table-hover">
+  <thead>
+    <tr class="table-dark ">
+     
+      <th class="text-info" scope="col ">First Name</th>
+      <th class="text-info" scope="col">Last Name</th>
+      <th class="text-info" scope="col">Full Name</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    {%for user in users %}
+    <tr class="table-secondary ">
+     
+      <td>{{user['first_name']}}</td>
+      <td>{{user['last_name']}}</td>
+      <td>{{user['first_name']+' '+user['last_name']}}</td>
+     
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</body>
+</html>
