@@ -1,0 +1,26 @@
+
+
+INSERT INTO table_name (column_name1, column_name2) 
+VALUES('column1_value', 'column2_value');
+insert INTO users (first_name,last_name,email)
+value('nidhal','jouili','nidhal@gmail.com');
+insert INTO users (first_name,last_name,email)
+value('lazher','jouili','lazher@gmail.com');
+insert INTO users (first_name,last_name,email)
+value('hanen','hanachi','hanen@gmail.com');
+select *from users;
+select * from users
+
+where email='nidhal@gmail.com';
+select * from users where id =3;
+DELETE FROM users WHERE id=2;
+UPDATE users
+SET last_name= 'Pancakes'
+WHERE id=3;
+SELECT *
+FROM users
+ORDER BY first_name;
+
+SELECT *
+FROM users
+ORDER BY first_name DESC;
