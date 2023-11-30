@@ -2,6 +2,8 @@
 from flask_app import app
 from flask import render_template, redirect, request, flash, session
 from flask_app.models.user import User
+from flask_app.models.recipe import Recipe
+
 from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt(app)
@@ -16,26 +18,19 @@ def index():
 
 
 # REGISTER - method - ACTION
-@app.route("/users/register", methods=["POST"])
+@app.route("/register", methods=["POST"])
 def user_register():
     # print(request.form)
     if not User.validate(request.form):
         return redirect("/")
     # 1 . hash the password
     pw_hashed = bcrypt.generate_password_hash(request.form["password"])
-    # 2 . get the data dict ready with the new hashe pw to create a User
-    # data = {
-    #     "first_name": request.form["first_name"],
-    #     "last_name": request.form["last_name"],
-    #     "email": request.form["email"],
-    #     "confirm": request.form["confirm_password"],
-    #     "password": pw_hashed,
-    # }
+   
     data = {**request.form, "password": pw_hashed}
     # save user in DB
     user_id = User.create(data)
     session["user_id"] = user_id
-    return redirect("/dashboard")
+    return redirect("/recipes")
 
 
 # Login - method - ACTION
@@ -45,29 +40,30 @@ def user_login():
     user_in_db = User.get_by_email(data)
     # if email not found
     if not user_in_db:
-        flash("invalid credentials", "log")
+        flash("invalid credentials")
         return redirect("/")
     # now check the password
     if not bcrypt.check_password_hash(user_in_db.password, request.form["password"]):
-        flash("invalid credentials", "log")
+        flash("invalid credentials")
         return redirect("/")
 
     # * if all is good
     print(f"===> id = {user_in_db.id}")
     session["user_id"] = user_in_db.id
-    return redirect("/dashboard")
+    return redirect("/recipes")
 
 
 # Display Route - Dashboard
-@app.route("/dashboard")
+@app.route("/recipes")
 def dash():
     # ! Route Guard
     if "user_id" not in session:
         return redirect("/")
     data = {"id": session["user_id"]}
     loggedin_user = User.get_user_by_id(data)
+    all_recipes=Recipe.get_all_recipes()
     session["user_email"] = "a@a.com"
-    return render_template("dashboard.html", loggedin_user=loggedin_user)
+    return render_template("recipes_table.html", loggedin_user=loggedin_user,all_recipes=all_recipes)
 
 
 # ! ------- LOGOUT -------- action

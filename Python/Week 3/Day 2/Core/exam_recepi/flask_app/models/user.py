@@ -18,7 +18,7 @@ class User:
     @classmethod
     def create(cls, data):
         query = """
-                INSERT INTO users (first_name, last_name, email, password)
+                INSERT INTO users (first_name,last_name,email,password)
                 VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s);
                 """
 
@@ -60,12 +60,13 @@ class User:
     def validate(data):
         is_valid = True
 
-        if len(data["first_name"]) < 2:
+        if len(data["first_name"]) < 1:
             is_valid = False
-            flash("First name must be at least 3 characters")
-        if len(data["last_name"]) < 2:
+            flash(" name must be at least 2 characters")
+
+        if len(data["last_name"]) < 1:
             is_valid = False
-            flash("last name must be at least 3 characters")
+            flash(" name must be at least 2 characters")
         if len(data["email"]) < 1:
             flash("email Required !")
             is_valid = False
