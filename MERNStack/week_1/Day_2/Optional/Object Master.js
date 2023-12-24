@@ -30,7 +30,7 @@ const pokémon = Object.freeze([
     // console.log(pokémon_id);
     // =================2===================
     // const pokemon_type=pokémon.filter((poke)=>{
-    //     return poke.types=="fire";
+    //     return poke.types.includes("fire");
     // })
     // console.log(pokemon_type);
     // ===============3====================
@@ -54,13 +54,13 @@ const pokémon = Object.freeze([
     // console.log(pokemon);
 
     // ===========================6===============
-    // const pokemon_poison=pokémon.filter((poke)=>{
+    const pokemon_poison=pokémon.filter((poke)=>{
         
-    //     return poke.types.includes("poison")
-    // }).map((poke)=>{
-    //     return poke.name;
-    // })
-    // console.log(pokemon_poison);
+        return poke.types.includes("poison")&&poke.types.length==1
+    }).map((poke)=>{
+        return poke.name;
+    })
+    console.log(pokemon_poison);
     // =====================7================
     // const pokemon=pokémon.filter((poke)=>{
     //     return poke.types[1]=="flying";
@@ -71,7 +71,7 @@ const pokémon = Object.freeze([
     // console.log(pokemon);
 
     // ==============8==================
-    const count_pokemon=pokémon.filter((poke)=>{
-        return poke.types.includes("normal");
-    }).length
-    console.log(count_pokemon)
+    // const count_pokemon=pokémon.filter((poke)=>{
+    //     return poke.types.includes("normal");
+    // }).length
+    // console.log(count_pokemon)
