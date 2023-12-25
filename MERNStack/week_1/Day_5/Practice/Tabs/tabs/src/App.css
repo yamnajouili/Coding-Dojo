@@ -2,14 +2,19 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+ 
 }
+*{
+  margin: auto;
 
+}
 .flex{
   display: flex;
   gap: 10px;
   
 }
-.card{
+textarea{
   height: 200px;
   width: 400px;
   border: 2px solid gray;

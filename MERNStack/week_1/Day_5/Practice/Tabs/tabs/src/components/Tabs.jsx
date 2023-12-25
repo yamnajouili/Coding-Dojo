@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Tabs = ({ listtab, display }) => {
+const Tabs = ({tabs, display }) => {
   return (
-    <div>
-      {listtab.map((onetab, index) => (
+    <div className='flex'>
+      {tabs.map((onetab, index) => (
         <div key={index}>
-          <div className='flex'>
-            <button className='btn' onClick={() => display(index)}>
+          <div >
+            <button className='btn' onClick={() => display(onetab)}>
               Tab {index + 1}
             </button>
-            <div className='card'>{onetab}</div>
+            
       
           </div>
          
