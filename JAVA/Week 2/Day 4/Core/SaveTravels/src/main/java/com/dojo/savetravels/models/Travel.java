@@ -40,7 +40,7 @@ public class Travel {
 		@NotNull
 		@Min(0)
 		
-		private Integer amout;
+		private Double amout;
 		
 		
 
@@ -103,12 +103,12 @@ public class Travel {
 		}
 
 
-		public Integer getAmout() {
+		public Double getAmout() {
 			return amout;
 		}
 
 
-		public void setAmout(Integer amout) {
+		public void setAmout(Double amout) {
 			this.amout = amout;
 		}
 

@@ -63,7 +63,15 @@ public class ExpenseService {
 	
 	
 	
-	
+		  // retrieves a book
+	    public Travel findTravel(Long id) {
+	        Optional<Travel> optionalTravel = expenseRepo.findById(id);
+	        if(optionalTravel.isPresent()) {
+	            return optionalTravel.get();
+	        } else {
+	            return null;
+	        }
+	    }
 	
 	
 	
