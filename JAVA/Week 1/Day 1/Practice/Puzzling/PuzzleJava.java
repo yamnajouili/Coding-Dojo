@@ -18,18 +18,6 @@ public class PuzzleJava {
     }
 
 
-    // getRandomLetter
-   
-    public String getRandomLetterWithArray() {
-        Random rand = new Random();
-        
-        String alphabetString = "abcdefghijklmnopqrstuvwxyz";
-        String[] alphabet = new String[26];
-        for (int i = 0; i < 26; i++) {
-            alphabet[i] = String.valueOf(alphabetString.charAt(i));
-        }
-        return alphabet[rand.nextInt(26)];
-    }
     
     public String getRandomLetter() {
 
